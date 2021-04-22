@@ -72,11 +72,11 @@ WSGI_APPLICATION = 'Batulis.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'blogku',
-        'USER' : 'batulis',
-        'PASSWORD' : 'Batulis1998',
+        'NAME': '',
+        'USER' : '',
+        'PASSWORD' : '',
         'HOST' : 'localhost',
-        'PORT' : '5432',
+        'PORT' : '',
     }
 }
 
@@ -125,8 +125,8 @@ STATICFILES_DIRS = [
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'rizalgente1998@gmail.com'
-EMAIL_HOST_PASSWORD = 'R1zalgente'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
 DEFAULT_EMAIL_HOST = EMAIL_HOST_USER
