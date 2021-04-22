@@ -1,0 +1,17 @@
+<div class="pagination" style="margin: 10px auto; text-align: center;">
+  <span style="margin-right: 10px;">
+  {% if page.has_previous %}
+  <a href="?page={{ page.previous_page_number }}"> Previous page </a>
+  {% endif %}
+  </span>
+
+    
+  <span style="padding:  5px 10px; border: 1px solid blue; background: white;">{{ page.number }}</span>  <span style="padding:  5px 10px; border: 1px solid blue; background: white;">{{ page.paginator.num_pages }}</span>
+    
+
+  <span style="margin-left: 10px;">
+  {% if page.has_next %}
+  <a href="?page={{ page.next_page_number }}"> Next page </a>
+  {% endif %}
+  </span>
+</div>

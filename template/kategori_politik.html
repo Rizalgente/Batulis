@@ -1,0 +1,20 @@
+{% extends 'Base (copy).html' %}
+
+{% block content %}
+    <div class="cover">
+      {% if post %}
+      {% for posts in post %}
+        <div class="box">
+          <a href="{% url 'post_detail' posts.slug %}">
+            <img src="{{ posts.image.url }}" alt="gambar">
+          </a>
+          <a href="{% url 'post_detail' posts.slug %}"><h4>{{ posts.title }}</h4></a>
+        </div>
+      {% endfor %}
+      {% else %}
+        <span style="text-align: center;"><h5>Ops, keyword yang anda masukan tidak ditemukan!</h5></span>
+      {% endif %}
+    </div>
+    {% include 'pagination.html' with page=post %}
+
+{% endblock %}

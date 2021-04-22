@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/Base.css">
+    <link rel="stylesheet" href="/static//css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="banner">
+        <blockquote>
+          <h1>We have new books, movies & games everyday for the whole month. For Free Download!</h1>
+          <button>Read More</button>
+        </blockquote>
+        <div class="gambar">
+          <img src="/static/image/bum.jpeg" alt="gambar">
+        </div>
+      </div>
+    
+      <article class="kotak_blog">
+        <div class="cover">
+          {% for posts in post %}
+          <div class="box">
+            <a href="{% url 'post_detail' posts.slug %}">
+              <img src="{{ posts.image.url }}" alt="gambar">
+            </a>
+            <a href="{% url 'post_detail' posts.slug %}"><h4>{{ posts.title}}</h4></a>
+          </div>
+          {% endfor %}
+        </div>
+        
+        
+        <div class="box_pop">
+          <div class="box_box">
+            <h4>Popular posts</h4>
+            <div class="box_content_pop">
+              <a href="#">
+                <img src="/static/image/book-1_002.jpg" alt="cover">
+                <div class="box_judul">
+                  <p>Huckleberry Finn</p>
+                  <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry…</small>
+                </div>
+              </a>
+            </div>
+            <div class="box_content_pop">
+              <a href="#">
+                <img src="/static/image/book-1_002.jpg" alt="cover">
+                <div class="box_judul">
+                  <p>Huckleberry Finn</p>
+                  <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry…</small>
+                </div>
+              </a>
+            </div>
+            <div class="box_content_pop">
+              <a href="#">
+                <img src="/static/image/book-1_002.jpg" alt="cover">
+                <div class="box_judul">
+                  <p>Huckleberry Finn</p>
+                  <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry…</small>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+    
+        <div class="box_box2">
+          <h4>Facebook</h4>
+            <p>coming soon..</p>
+        </div>
+    
+        <div class="box_box3">
+          <h4>Kategori</h4>
+            <div class="box_content_kategori">
+              <a class="kategori" href="">
+                <li>Sastra</li>
+                <li id="jumlah">(3)</li>
+              </a>
+              <a class="kategori" href="">
+                <li>Filsafat</li>
+                <li id="jumlah2">(3)</li>
+              </a>
+              <a class="kategori" href="">
+                <li>Sosial</li>
+                <li id="jumlah3">(3)</li>
+              </a>
+              <a class="kategori" href="">
+                <li>politik</li>
+                <li id="jumlah4">(3)</li>
+              </a>
+              <a class="kategori unik" href="">
+                <li>Sejarah</li>
+                <li id="jumlah5">(3)</li>
+              </a>
+            </div>
+        </div>
+    
+        <div class="box_box4">
+          <h4>Tag</h4>
+          <div class="box_content_tag">
+            <a href="#">
+                <small>Filsafat</small>
+                <small>Sosial</small>
+                <small>Politik</small>
+                <small>Sastra</small>
+                <small>Sejarah</small>
+            </a>
+          </div>
+        </div>
+       
+      </article>
+
+      <section>
+        <div class="box_book">
+          <h3><span style="color: tomato; font-size: 30px;">.</span> Most Recent</h3>
+          <div class="box_book_row">
+            <a href="#">
+                <img src="/static/image/book-1_002.jpg" alt="">
+                <div class="box_judul">
+                    <p>Huckleberry Finn</p>
+                    <small>Lorem Ipsum is simply dummy text of the printing and typesetting…</small>
+                </div>
+            </a>
+          </div>
+          <div class="box_book_row">
+            <a href="#">
+                <img src="/static/image/book-1_002.jpg" alt="">
+                <div class="box_judul">
+                    <p>Huckleberry Finn</p>
+                    <small>Lorem Ipsum is simply dummy text of the printing and typesetting…</small>
+                </div>
+            </a>
+          </div>
+        </div>
+        <div class="box_book">
+          <h3><span style="color: tomato; font-size: 30px;">.</span> Recent in Food</h3>
+          <div class="box_book_row">
+            <a href="#">
+                <img src="/static/image/book-1_002.jpg" alt="">
+                <div class="box_judul">
+                    <p>Huckleberry Finn</p>
+                    <small>Lorem Ipsum is simply dummy text of the printing and typesetting…</small>
+                </div>
+            </a>
+          </div>
+          <div class="box_book_row">
+            <a href="#">
+                <img src="/static/image/book-1_002.jpg" alt="">
+                <div class="box_judul">
+                    <p>Huckleberry Finn</p>
+                    <small>Lorem Ipsum is simply dummy text of the printing and typesetting…</small>
+                </div>
+            </a>
+            </div>
+        </div>
+        <div class="box_book">
+          <h3><span style="color: tomato; font-size: 30px;">.</span> Recent in Food</h3>
+          <div class="box_book_row">
+            <a href="#">
+                <img src="/static/image/book-1_002.jpg" alt="">
+                <div class="box_judul">
+                    <p>Huckleberry Finn</p>
+                    <small>Lorem Ipsum is simply dummy text of the printing and typesetting…</small>
+                </div>
+            </a>
+          </div>
+          <div class="box_book_row">
+            <a href="#">
+                <img src="/static/image/book-1_002.jpg" alt="">
+                <div class="box_judul">
+                    <p>Huckleberry Finn</p>
+                    <small>Lorem Ipsum is simply dummy text of the printing and typesetting…</small>
+                </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    
+      <footer>
+        <p>copyright&copy;- Literasi</p>
+      </footer>
+      
+</body>
+</html>

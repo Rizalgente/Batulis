@@ -1,0 +1,807 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body{
+    background: #f8f9fa;
+}
+header {
+    position: fixed;
+    width: 100%;
+    border-bottom: 1px solid #ebebeb;
+    background: #fff;
+    z-index: 999999;
+}
+header nav{
+    position: relative;
+    display: flex;
+    max-width: calc(100% - 200px);
+    margin: 0 auto;
+    height: 66px;
+    justify-content: space-between;
+    align-items: center;
+}
+nav .content_nav{
+    display: flex;
+    align-items: center;
+}
+nav .content_nav ul{
+    margin-left: 80px;
+    display: flex;
+}
+.content_nav ul li{
+    list-style: none;
+    align-items: center;
+    padding: 5px 0;
+}
+.content_nav .logo a{
+    color: #888;
+    font-size: 30px;
+    font-weight: 600;
+}
+.content_nav ul li a{
+    color: #888;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 7px 17px;
+    transition: 0.2s;
+}
+.content_nav ul #masuk{
+    padding: 5px 0;
+    background: orange;
+    border-radius: 5px;
+    margin-left: 15px;
+}
+.content_nav ul #masuk a{
+    font-size: 12px;
+    color: white;
+}
+.content_nav ul #masuk:hover{
+    background: rgb(238, 157, 7);
+}
+.content_nav ul li a:hover{
+    color: orange;
+}
+header .search_icon i,
+header .menu_icon i{
+    color: #888;
+    cursor: pointer;
+    line-height: 70px;
+    width: 70px;
+    text-align: center;
+}
+header .menu_icon{
+    display: none;
+}
+header #show_search:checked ~ .search_icon i::before{
+    content: "\f00d";
+}
+header #menu_search:checked ~ .menu_icon i::before{
+    content: "\f00d";
+}
+header .search_box{
+    position: absolute;
+    height: 100%;
+    max-width: calc(100% - 50px);
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+header #show_search:checked ~ .search_box{
+    opacity: 1;
+    pointer-events: auto;
+}
+.search_box input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    color: #888;
+    /* padding: 0 100px 0 15px; */
+}
+.search_box input::placeholder{
+    color: #888;
+}
+.search_box .go_icon{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    line-height: 56px;
+    transform: translateY(-50%);
+    width: 70px;
+    border: none;
+    outline: none;
+    background: #fff;
+    color: #888;
+    font-size: 18px;
+    cursor: pointer;
+}
+header input[type="checkbox"]{
+    display: none;
+}
+
+
+.banner {
+    padding: 100px 100px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    border-bottom: 1px solid #ebebeb;
+    background: #fff;
+}
+blockquote{
+    padding-top: 100px;
+}
+blockquote h1 {
+    margin-bottom: 20px;
+    line-height: 60px;
+    font-weight: 300;
+    font-size: 40px;
+    color: #333333;
+    transition: 0.2s;
+    font-style: italic;
+}
+blockquote h1:hover{
+    color: orange;
+}
+blockquote button{
+    padding: 15px 30px;
+    margin-top: 10px;
+    font-size: 17px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: orange;
+    color: white;
+    cursor: pointer;
+}
+blockquote button:hover{
+    background: #333333;
+}
+.gambar img{
+    width: 100%;
+}
+
+/* *********************************** artikel ******************************************* */
+.blog {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 100px 140px;
+    gap: 30px;
+}
+.box_blog{
+    grid-row-start: 1;
+    grid-row-end: 8;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.09);
+    background: white;
+    padding: 20px;
+}
+.box_blog h5{
+    background: #ff8466;
+    display: inline-block;
+    color: white;
+    padding: 5px 8px;
+    margin-bottom: 20px;
+}
+.box_blog h2{
+    font-size: 25px;
+    position: relative;
+    display: block;
+    color: #333333;
+    margin-bottom: 20px;
+}
+.box_blog p{
+    font-size: 13px;
+    position: relative;
+    display: block;
+    color: #333333;
+    margin-bottom: 20px;
+}
+.box_blog img{
+    width: 100%;
+    margin-bottom: 20px;
+}
+#text_content{
+    font-size: 14px;
+    line-height: 22px;
+}
+.box_judul{
+    padding: 10px;
+}
+.box_judul p{
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #333333;
+}
+.box_judul small{
+    font-size: 12px;
+    color: #999;
+}
+.box_box h4,
+.box_box2 h4,
+.box_box3 h4,
+.box_box4 h4{
+    background: #ff8466;
+    padding: 10px 20px;
+    color: white;
+    font-size: 15px;
+}
+/* *********************************** social ************************************************ */
+
+
+
+/* *********************************** box populer ************************************************ */
+.box_content_pop{
+    padding: 10px 20px;
+}
+.box_content_pop a{
+    text-decoration: none;
+    display: flex;
+    margin: 10px 0;
+}
+.box_content_pop img{
+    min-width: 65px;
+    max-width: 60px;
+    transition: 0.1s;
+}
+.box_judul p{
+    transition: 0.1s;
+}
+.box_judul p:hover{
+    color: tomato;
+}
+.box_content_pop a img:hover{
+    opacity: 0.8;
+}
+/* *********************************** kategori *************************************************** */
+.box_content_kategori{
+    padding: 0 20px 10px 20px;
+}
+.box_content_kategori a li{
+    list-style: none;
+    margin: 10px 0;
+}
+.box_content_kategori a{
+    text-decoration: none;
+    font-size: 13px;
+    color: #333;
+    transition: 0.2s;
+}
+.box_content_kategori a:hover{
+    color: tomato;
+}
+.box_content_kategori .kategori{
+    border-bottom: 1px dashed rgb(197, 196, 196);
+    margin-top: 5px;
+    display: flex;
+    position: relative;
+}
+.box_content_kategori .unik{
+    border-bottom: none;
+}
+.box_box,
+.box_box2,
+.box_box3,
+.box_box4,
+.box_box5{
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.09);
+    background: white;
+}
+#jumlah{
+    margin-left: 93%;
+    position: absolute;
+}
+#jumlah2{
+    margin-left: 93%;
+    position: absolute;
+}
+#jumlah3{
+    margin-left: 93%;
+    position: absolute;
+}
+#jumlah4{
+    margin-left: 93%;
+    position: absolute;
+}
+#jumlah5{
+    margin-left: 93%;
+    position: absolute;
+}
+
+/* ******************************** tag ****************************************** */
+.box_content_tag{
+    display: flex;
+    padding: 10px 20px;
+}
+.box_content_tag a{
+    text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+    color: black;
+    font-size: 15px;
+}
+.box_content_tag a small{
+    margin: 3px;
+    padding: 5px 10px;
+    border: 1px solid rgba(155,155,155,0.1);
+    border-top-color: rgba(155, 155, 155, 0.1);
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-right-color: rgba(155, 155, 155, 0.1);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-bottom-color: rgba(155, 155, 155, 0.1);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: rgba(155, 155, 155, 0.1);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-image-outset: 0;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+}
+.box_content_tag a small:hover{
+    background: #ff8466;
+    color: white;
+}
+
+/* ******************************* section blog ************************************** */
+.kotak_blog{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    padding: 40px 140px;
+}
+.cover{
+    grid-row-start: 1;
+    grid-row-end: 8;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    max-height: 290px;
+}
+.kotak_blog .box{
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.09);
+    background: white;
+    max-width: 190px;
+    margin: 10px;
+    padding: 20px;
+}
+/* .kotak_blog .box{
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.09);
+    justify-content: space-between;
+    margin: 10px;
+    padding: 20px;
+} */
+.box a{
+    text-decoration: none;
+    color: #333333;
+    text-align: center;
+}
+.box a h4{
+    transition: 0.1s;
+}
+.box a h4:hover{
+    color: tomato;
+}
+.box a img:hover{
+    opacity: 0.8;
+}
+.kotak_blog .box img{
+    width: 100%;
+    margin-bottom: 10px;
+    transition: 0.1s;
+}
+/* ******************************************************************************* */
+
+.box_comment{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 0 140px;
+    margin-bottom: 40px;
+}
+.box12{
+     box-shadow: 0 0 5px 0 rgba(0,0,0,0.09);
+}
+.box12 h3{
+    padding: 5px 20px;
+    background: #ff8466;
+    color: white;
+}
+.box12 p{
+    padding: 5px 20px;
+}
+/* ********* Most popular ************ Most recent *************** Most in food ************ */
+section{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px 140px;
+    background: white;
+    border-top: 1px solid #ebebeb;
+    margin-top: 150px;
+}
+.box_book h3{
+    margin-bottom: 20px;
+}
+.box_book_row{
+    /* display: flex; */
+    margin-bottom: 20px;
+    /* justify-content: space-between; */
+    min-width: 200px;
+}
+.box_book_row a{
+    display: flex;
+    text-decoration: none;
+}
+.box_book_row a img {
+    min-width: 65px;
+    max-width: 60px;
+    transition: 0.1s;
+}
+.box_book_row a img:hover{
+    opacity: 0.8;
+}
+
+/* ******************************** footer ************************************************** */
+footer{
+    padding: 20px;
+    background: #333333;
+}
+footer p{
+    color: white;
+    padding: 0 120px;
+}
+
+
+
+/************************************ Responsive menu ******************************************/
+@media (max-width: 1252px)
+{
+    header nav{
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    nav .content_nav ul{
+        margin-left: 30px;
+    }
+    .content_nav ul li a{
+        padding: 8px 13px;
+    }
+    header .search_box{
+        max-width: calc(100% - 100px);
+    }
+    .banner{
+        padding: 100px 40px;
+    }
+    .gambar{
+        margin-top: 50px;
+    }
+    .gambar img{
+        width: 100%;
+    }
+    .kotak_blog{
+        padding: 40px 30px;
+    }
+    section {
+        padding: 20px 30px;
+        margin-top: 50px;
+    }
+    .blog {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        padding: 100px 30px;
+        gap: 30px;
+    }
+    .box_blog{
+        grid-row-start: 1;
+        grid-row-end: 8;
+        box-shadow: 0 0 5px 0 rgba(0,0,0,0.09);
+        background: white;
+        padding: 20px;
+    }
+    .box_blog h5{
+        background: #ff8466;
+        display: inline-block;
+        color: white;
+        padding: 5px 8px;
+        margin-bottom: 20px;
+    }
+    .box_blog h2{
+        font-size: 25px;
+        position: relative;
+        display: block;
+        color: #333333;
+        margin-bottom: 20px;
+    }
+    .box_blog p{
+        font-size: 13px;
+        position: relative;
+        display: block;
+        color: #333333;
+        margin-bottom: 20px;
+    }
+    .box_blog img{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    #text_content{
+        font-size: 14px;
+        line-height: 22px;
+    }
+    .box_judul{
+        padding: 10px;
+    }
+    .box_judul p{
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 5px;
+        color: #333333;
+    }
+    .box_judul small{
+        font-size: 12px;
+        color: #999;
+    }
+    .box_box h4,
+    .box_box2 h4,
+    .box_box3 h4,
+    .box_box4 h4{
+        background: #ff8466;
+        padding: 10px 20px;
+        color: white;
+        font-size: 15px;
+    }
+    .box_comment {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+        padding: 0 30px;
+        margin-bottom: 40px;
+    }
+    footer p{
+        color: white;
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 1033px)
+{
+    .kotak_blog .box {
+        max-width: 170px;
+    }
+    section {
+        padding: 20px 30px;
+        margin-top: 1px;
+    }
+}
+
+@media (max-width: 993px)
+{
+    blockquote h1{
+        font-size: 30px;
+    }
+    .kotak_blog .box {
+        max-width: 155px;
+    }
+    .kotak_blog .box img{
+        width: 100%;
+    }
+    .box a h4 {
+        font-size: 14px;
+    }
+    .box_judul {
+        padding: 8px;
+    }
+    .box_judul p {
+        font-size: 12px;
+    }
+    .box_judul small {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 900px)
+{
+    header .menu_icon{
+        display: block;
+    }
+    nav .content_nav ul{
+        display: block;
+        position: fixed;
+        background: orange;
+        height: 60%;
+        width: 100%;
+        top: 66px;
+        left: -100%;
+        margin-left: 0;
+        max-width: 350px;
+        transition: all 0.3s ease;
+    }
+    nav .content_nav ul li a{
+        color: #fff;
+        transition: all 0.3s ease;
+    }
+    nav .content_nav ul li a:hover{
+        color: #fff;
+        background: rgb(231, 153, 6);
+    }
+    .content_nav ul #garis a{
+        border-bottom: 1px solid white;
+    }
+    .content_nav ul #masuk{
+        padding: 0 1px;
+        background: blue;
+        border-radius: 5px;
+        margin-left: 35px;
+        display: inline-block;
+        margin-top: 5px;
+    }
+    .content_nav ul #masuk:hover{
+        background: rgb(43, 43, 253);
+    }
+    .content_nav ul #masuk a{
+        background: rgb(12, 12, 252);
+        border-radius: 5px; 
+    }
+    nav #menu_search:checked ~ .content_nav ul{
+        left: 0%;
+    }
+    .content_nav ul li{
+        padding: 15px 20px;
+    }
+    .content_nav ul li a{
+        line-height: 20px;
+        display: block;
+        padding: 8px 18px;
+    }
+    blockquote h1 {
+        font-size: 25px;
+        max-width: 500px;
+        line-height: 40px;
+    }
+    .blog {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 100px 30px;
+        gap: 30px;
+    }
+
+    /************************************ grid ****************************************/
+    .kotak_blog{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 40px 30px;
+    }
+    .cover{
+        max-height: max-content;
+    }
+    .kotak_blog .box{
+        box-shadow: 0 0 5px 0 rgba(0,0,0,0.09);
+        background: white;
+        min-width: 180px;
+        margin: 10px auto;
+        padding: 20px;
+    }
+    /* .kotak_blog .box{
+        box-shadow: 0 0 5px 0 rgba(0,0,0,0.09);
+        justify-content: space-between;
+        margin: 10px;
+        padding: 20px;
+    } */
+    .box a{
+        text-decoration: none;
+        color: #333333;
+        text-align: center;
+    }
+    .box a h4{
+        transition: 0.1s;
+    }
+    .box a h4:hover{
+        color: tomato;
+    }
+    .box a img:hover{
+        opacity: 0.8;
+    }
+    .kotak_blog .box img{
+        width: 100%;
+        margin-bottom: 10px;
+        transition: 0.1s;
+    }
+    /* ******************************************************************************* */
+    
+    .box_comment{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 30px;
+        margin-bottom: 40px;
+    }
+    .box12{
+         box-shadow: 0 0 5px 0 rgba(0,0,0,0.09);
+    }
+    .box12 h3{
+        padding: 5px 20px;
+        background: #ff8466;
+        color: white;
+    }
+    .box12 p{
+        padding: 5px 20px;
+    }
+    footer p{
+        font-size: 14px;
+    }
+    section{
+        margin-top: 0px;
+    }
+}  
+
+@media (max-width: 708px)
+{
+    section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px)
+{
+    .gambar{
+        width: 100%;
+    }
+    .gambar img{
+        width: 250px;
+    }
+    blockquote h1 {
+        margin-top: -50px;
+    }
+}
+
+@media (max-width: 580px)
+{
+    .banner {
+        padding: 70px 40px;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .gambar img{
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 446px)
+{
+    .kotak_blog .box {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 420px)
+{
+    .box_blog p {
+        font-size: 10px;;
+    }
+    .box_book_row a img {
+        min-width: 50px;
+        max-width: 45px;
+        transition: 0.1s;
+    }
+    footer p{
+        text-align: center;
+    }
+    header .search_icon i, header .menu_icon i {
+        color: #888;
+        cursor: pointer;
+        line-height: 70px;
+        width: 35px;
+        text-align: center;
+    }
+}

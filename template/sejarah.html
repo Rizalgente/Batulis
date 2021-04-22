@@ -1,0 +1,93 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+
+<div class="banner">
+  <blockquote>
+    <h1>We have new books, movies & games everyday for the whole month. For Free Download!</h1>
+    <button>Read More</button>
+  </blockquote>
+  <div class="gambar">
+    <img src="/static/image/bum.jpeg" alt="gambar">
+  </div>
+</div>
+
+<article class="kotak_blog">
+  <div class="cover">
+    {% for posts in kategori %}
+    <div class="box">
+      <a href="{% url 'post_detail' posts.slug %}">
+        <img src="{{ posts.image.url }}" alt="gambar">
+      </a>
+      <a href="{% url 'post_detail' posts.slug %}"><h4>{{ posts.title}}</h4></a>
+    </div>
+    {% endfor %}
+  </div>
+  
+  
+  <div class="box_pop">
+    <div class="box_box">
+      <h4>Popular posts</h4>
+      <div class="box_content_pop">
+        <a href="#">
+          <img src="/static/image/book-1_002.jpg" alt="cover">
+          <div class="box_judul">
+            <p>Huckleberry Finn</p>
+            <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry…</small>
+          </div>
+        </a>
+      </div>
+      <div class="box_content_pop">
+        <a href="#">
+          <img src="/static/image/book-1_002.jpg" alt="cover">
+          <div class="box_judul">
+            <p>Huckleberry Finn</p>
+            <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry…</small>
+          </div>
+        </a>
+      </div>
+      <div class="box_content_pop">
+        <a href="#">
+          <img src="/static/image/book-1_002.jpg" alt="cover">
+          <div class="box_judul">
+            <p>Huckleberry Finn</p>
+            <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry…</small>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="box_box2">
+    <h4>Facebook</h4>
+      <p>coming soon..</p>
+  </div>
+
+  <div class="box_box3">
+    <h4>Kategori</h4>
+      <div class="box_content_kategori">
+        {% for kat in Post %}
+        <a class="kategori" href="">
+          <li>{{ kat.kategori }}</li>
+          <li id="jumlah">(3)</li>
+        </a>
+        {% endfor %}
+      </div>
+  </div>
+
+  <div class="box_box4">
+    <h4>Tag</h4>
+    <div class="box_content_tag">
+      <a href="#">
+          <small>filsafat</small>
+          <small>sosial</small>
+          <small>politik</small>
+          <small>sastra</small>
+          <small>sejarah</small>
+      </a>
+    </div>
+  </div>
+ 
+</article>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'Base (copy).html' %}
+
+{% block content %}
+  {% if bb %}
+    <div class="cover">
+      {% for posts in post %}
+      <div class="box">
+        <a href="{% url 'post_detail' posts.slug %}">
+          <img src="{{ posts.image.url }}" alt="gambar">
+        </a>
+        <a href="{% url 'post_detail' posts.slug %}"><h4>{{ posts.title }}</h4></a>
+      </div>
+      {% endfor %}
+  {% else %}
+  <h5>data tidak ada!</h5>
+    </div>
+  {% endif %}
+    {% include 'pagination.html' with page=post %}
+
+  {% endblock %}

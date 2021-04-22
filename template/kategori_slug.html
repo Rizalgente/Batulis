@@ -1,0 +1,18 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+
+<article class="kotak_blog">
+    <div class="cover">
+      {% for posts in post %}
+      <div class="box">
+        <a href="{% url 'post_detail' posts.slug %}">
+          <img src="{{ posts.image.url }}" alt="gambar">
+        </a>
+        <a href="{% url 'post_detail' posts.slug %}"><h4>{{ posts.title }}</h4></a>
+      </div>
+      {% endfor %}
+    </div>
+
+{% endblock %}
+

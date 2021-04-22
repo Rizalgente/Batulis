@@ -1,0 +1,166 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="{% static 'css/slug.css' %}"> -->
+  <link rel="stylesheet" href="{% static 'css/basse.css' %}">
+  <title>Batulis</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <input type="checkbox" id="show_search">
+      <input type="checkbox" id="menu_search">
+      <label for="menu_search" class="menu_icon"><i class="fas fa-bars"></i></label>
+      <div class="content_nav">
+        <div class="logo"><a href="{% url 'index' %}"><img src="{% static 'image/Batulis.png' %}" alt="logo"></a></div>
+          <ul>
+            <li><a href="{% url 'sejarah' %}">Sejarah</a></li>
+            <li><a href="{% url 'sastra' %}">Sastra</a></li>
+            <li><a href="{% url 'politik' %}">Politik</a></li>
+            <li><a href="{% url 'filsafat' %}">Filsafat</a></li>
+            <li id="garis"><a href="{% url 'opini' %}">Opini</a></li>
+            <li id="masuk"><a href="#">Masuk</a></li>
+          </ul>
+      </div>
+      <label for="show_search" class="search_icon"><i class="fas fa-search"></i></label>
+      <form action="#" class="search_box">
+        <input type="text" placeholder="Cari.." required>
+        <button class="go_icon" type="submit"><i class="fas fa-arrow-right"></i></button>
+      </form>
+    </nav>
+  </header> 
+
+
+<article class="blog">
+  {% block content %}
+
+  {% endblock %}
+   
+  <div class="box_pop">
+    <div class="box_box">
+      <h4>Popular posts</h4>
+      <div class="box_content_pop">
+        {% for pop in posts %}
+        <a href="{% url 'post_detail' pop.slug %}">
+          <img src="{{ pop.image.url }}" alt="cover">
+          <div class="box_judul">
+            <p>{{ pop.title }}</p>
+            <small>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi ratione dicta doloribus </small>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="box_box3">
+    <h4>Kategori</h4>
+      <div class="box_content_kategori">
+        {% for kat in kelompok %}
+        <a class="kategori" href="">
+          <li>{{ kat.kelompok }}</li>
+          <li id="jumlah">({{ kat.jumlah }})</li>
+        </a>
+        {% endfor %}
+      </div>
+  </div>
+
+  <div class="box_box4">
+    <h4>Tag</h4>
+    <div class="box_content_tag">
+      <a href="#">
+          <small>filsafat</small>
+          <small>sosial</small>
+          <small>politik</small>
+          <small>sastra</small>
+          <small>sejarah</small>
+      </a>
+    </div>
+  </div>
+ 
+</article>
+
+<div class="box_comment">
+    <div class="box12">
+      <h3>Post a Comment</h3>
+      <p>tempat komen</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="box_book">
+      <h3><span style="color: tomato; font-size: 30px;">.</span> Most Recent</h3>
+      <div class="box_book_row">
+        <a href="#">
+            <img src="/static/image/book-1_002.jpg" alt="">
+            <div class="box_judul">
+                <p>Huckleberry Finn</p>
+                <small>Lorem Ipsum is simply dummy text of the printing and typesetting…</small>
+            </div>
+        </a>
+      </div>
+      <div class="box_book_row">
+        <a href="#">
+            <img src="/static/image/book-1_002.jpg" alt="">
+            <div class="box_judul">
+                <p>Huckleberry Finn</p>
+                <small>Lorem Ipsum is simply dummy text of the printing and typesetting…</small>
+            </div>
+        </a>
+      </div>
+    </div>
+    <div class="box_book">
+      <h3><span style="color: tomato; font-size: 30px;">.</span> Recent in Food</h3>
+      <div class="box_book_row">
+        <a href="#">
+            <img src="/static/image/book-1_002.jpg" alt="">
+            <div class="box_judul">
+                <p>Huckleberry Finn</p>
+                <small>Lorem Ipsum is simply dummy text of the printing and typesetting…</small>
+            </div>
+        </a>
+      </div>
+      <div class="box_book_row">
+        <a href="#">
+            <img src="/static/image/book-1_002.jpg" alt="">
+            <div class="box_judul">
+                <p>Huckleberry Finn</p>
+                <small>Lorem Ipsum is simply dummy text of the printing and typesetting…</small>
+            </div>
+        </a>
+        </div>
+    </div>
+    <div class="box_book">
+      <h3><span style="color: tomato; font-size: 30px;">.</span> Recent in Food</h3>
+      <div class="box_book_row">
+        <a href="#">
+            <img src="/static/image/book-1_002.jpg" alt="">
+            <div class="box_judul">
+                <p>Huckleberry Finn</p>
+                <small>Lorem Ipsum is simply dummy text of the printing and typesetting…</small>
+            </div>
+        </a>
+      </div>
+      <div class="box_book_row">
+        <a href="#">
+            <img src="/static/image/book-1_002.jpg" alt="">
+            <div class="box_judul">
+                <p>Huckleberry Finn</p>
+                <small>Lorem Ipsum is simply dummy text of the printing and typesetting…</small>
+            </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+     <p>Copyright&copy;2021 - Batulis.id</p>
+  </footer>
+  
+  <script src="https://kit.fontawesome.com/02dfcf8bf0.js" crossorigin="anonymous"></script>
+</body>
+</html>

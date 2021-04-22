@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/account.css' %}">
+    <title>Daftar</title>
+</head>
+<body>
+    <div class="account">
+        <div class="banner">
+            <img src="{% static 'image/Batulis.png' %}" alt="logo">
+        </div>
+        <h4>Sudah punya akun? <a href="{% url 'login' %}">Masuk</a></h4>
+        <form action="create" method="POST">
+            {% csrf_token %}
+            <div class="atas">
+                <label id="first">FirstName & LastName</label>
+                <label id="last">FirstName</label>
+                <!-- <input id="nama" type="text" name="first_name" placeholder="First Name" required> -->
+                {{form.first_name}}
+                <label id="last">LastName</label>
+                <!-- <input id="nama" type="text" name="last_name" placeholder="Last Name" required> -->
+                {{form.last_name}}
+            </div>
+            <label for="">Username</label>
+            {{form.username}}
+            
+            <label for="">Email</label>
+            {{form.email}}
+
+            <label for="">Password</label>
+            {{form.password1}}
+
+            <label for="">Re-Password</label>
+    
+            {{form.password2}}
+            <button type="submit">SUBMIT</button> 
+            <span style="color: white;">{{form.errors}}</span>
+        </form>
+       
+    </div>
+
+    <script>
+        var form_fields = document.getElementsByTagName('input')
+        form_fields[1].placeholder = 'First name..';
+        form_fields[2].placeholder = 'Last name..';
+        form_fields[3].placeholder = 'Username..';
+        form_fields[4].placeholder = 'Email..';
+        form_fields[5].placeholder = 'Password..';
+        form_fields[6].placeholder = 'Re-password..';
+    </script>
+    
+</body>
+</html>
